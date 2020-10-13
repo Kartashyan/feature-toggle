@@ -1,0 +1,51 @@
+{
+  "name": "feature-toggle-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/app",
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "aws-sdk": "^2.768.0",
+    "serverless": "^2.6.0"
+  },
+  "scripts": {
+    "bootstrap": "npm install && cd api && sls dynamodb install",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test-app": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "test-api": "cd api && sls invoke test --stage test",
+    "start-test-db": "cd api && sls dynamodb start --stage test",
+    "deploy": "cd api && sls deploy",
+    "test": "npm run test-api && npm run test-app"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/react-hooks": "^3.4.2",
+    "react-app-rewired": "^2.1.6",
+    "react-test-renderer": "^16.13.1",
+    "serverless-dynamodb-local": "^0.2.39",
+    "serverless-jest-plugin": "^0.3.0"
+  }
+}
